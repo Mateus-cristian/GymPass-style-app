@@ -1,0 +1,23 @@
+{
+  "name": "gympass-clone-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start":"node build/server.ts",
+    "start:dev": "tsx watch src/server.ts",
+    "build": "tsup src --out-dir build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.11.13",
+    "tsup": "^8.0.1",
+    "tsx": "^4.7.0",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "fastify": "^4.26.0"
+  }
+}
