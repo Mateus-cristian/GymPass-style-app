@@ -7,6 +7,7 @@
     "start": "node build/server.ts",
     "start:dev": "tsx watch src/server.ts",
     "build": "tsup src --out-dir build",
+    "prisma": "npx prisma studio",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
