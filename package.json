@@ -8,7 +8,11 @@
     "start:dev": "tsx watch src/server.ts",
     "build": "tsup src --out-dir build",
     "prisma": "npx prisma studio",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "test:ui":"vitest --ui",
+    "test:down": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
@@ -16,11 +20,14 @@
     "@rocketseat/eslint-config": "2.1.0",
     "@types/bcryptjs": "2.4.6",
     "@types/node": "20.11.13",
+    "@vitest/coverage-v8": "1.2.2",
     "eslint": "8.56.0",
     "prisma": "5.9.0",
     "tsup": "8.0.1",
     "tsx": "4.7.0",
-    "typescript": "5.3.3"
+    "typescript": "5.3.3",
+    "vite-tsconfig-paths": "4.3.1",
+    "vitest": "1.2.2"
   },
   "dependencies": {
     "@prisma/client": "5.9.0",
