@@ -27,4 +27,14 @@ export class InMemoryusersRepository implements UsersRepository {
 
     return user
   }
+
+  async findById(userId: string): Promise<User | null> {
+    const user = this.items.find((item) => item.id === userId)
+
+    if (!user) {
+      return null
+    }
+
+    return user
+  }
 }
