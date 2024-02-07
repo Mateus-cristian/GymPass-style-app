@@ -48,4 +48,24 @@ export class InMemoryCheckInRepository implements CheckInsRepository {
       .filter((x) => x.user_id === userId)
       .slice((page - 1) * 20, page * 20)
   }
+
+  async findById(checkInId: string): Promise<CheckIn | null> {
+    const checkIn = this.items.find((checkIn) => checkIn.id === checkInId)
+
+    if (!checkIn) {
+      return null
+    }
+
+    return checkIn
+  }
+
+  async save(checkIn: CheckIn): Promise<CheckIn> {
+    const checkInIndex = this.items.findIndex((item) => item.id === checkIn.id)
+
+    if (checkInIndex >= 0) {
+      this.items[checkInIndex] = checkIn
+    }
+
+    return checkIn
+  }
 }
