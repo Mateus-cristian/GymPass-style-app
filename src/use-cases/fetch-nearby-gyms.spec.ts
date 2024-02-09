@@ -1,9 +1,5 @@
 import { expect, describe, it, beforeEach, vi, afterEach } from 'vitest'
-import { CheckInUseCase } from '@/use-cases/check-in'
 import { InMemoryGymsRepository } from '@/repositories/in-memory/in-memory-gyms-repository'
-import { InMemoryCheckInRepository } from '@/repositories/in-memory/in-memory-check-in-repository'
-import { FetchUserCheckInsHistoryUseCase } from './fetch-user-check-ins-history'
-
 import { FetchNearbyGymsUseCase } from './fetch-nearby-gyms'
 
 let gymsRepository: InMemoryGymsRepository
