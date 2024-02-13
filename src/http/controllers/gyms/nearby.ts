@@ -3,7 +3,7 @@ import { FastifyReply, FastifyRequest } from 'fastify'
 import { z } from 'zod'
 
 export async function nearby(request: FastifyRequest, reply: FastifyReply) {
-  const registerBodySchema = z.object({
+  const bodySchema = z.object({
     latitude: z.number().refine((value) => {
       return Math.abs(value) <= 90
     }),
@@ -12,7 +12,7 @@ export async function nearby(request: FastifyRequest, reply: FastifyReply) {
     }),
   })
 
-  const { latitude, longitude } = registerBodySchema.parse(request.body)
+  const { latitude, longitude } = bodySchema.parse(request.body)
 
   const nearbyGymUseCase = makeFetchNearbyGymsUseCase()
 

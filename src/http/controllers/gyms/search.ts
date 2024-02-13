@@ -4,12 +4,12 @@ import { FastifyReply, FastifyRequest } from 'fastify'
 import { z } from 'zod'
 
 export async function search(request: FastifyRequest, reply: FastifyReply) {
-  const registerBodySchema = z.object({
+  const bodySchema = z.object({
     q: z.string(),
     page: z.coerce.number().min(1).default(1),
   })
 
-  const { q, page } = registerBodySchema.parse(request.body)
+  const { q, page } = bodySchema.parse(request.body)
 
   const searchGymUseCase = makeSearchGymsUseCase()
 
